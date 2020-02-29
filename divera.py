@@ -10,17 +10,25 @@ class Divera:
     def __init__(self, accessKey):
         self._accessKey = accessKey
 
-    def has_open_alarms(self):
+    def __get_json(self):
+        f = open("test/openAlarm_unformatted.json", "r")
+        deserializedJson = json.loads(f.read())
+        f.close()
+        return deserializedJson
+
         alarmsUrl = Divera.API_BASE_URL + "/alarms"
 
         # sending get request and saving the response as response object
         r = requests.get(url=alarmsUrl, params={'accesskey': self._accessKey})
         if r.status_code == 200:
-            f = open("openAlarm_unformatted.json", "r")
-            deserializedJson = json.loads(f.read())
-            f.close()
             #print(r.json())
-            #deserializedJson = r.json()
+            return r.json()
+        else:
+            print("Error requesting GET '", alarmsUrl, "'. Status code: ", r.status_code)
+            return False
+
+    def has_open_alarms(self):
+            deserializedJson = self.__get_json()
             allAlarms = deserializedJson["data"]["items"]
 
             if not type(allAlarms) is dict:
@@ -34,5 +42,4 @@ class Divera:
                 if a["closed"] == False:
                     return True
             return False
-        else:
-            print("Error requesting GET '", alarmsUrl, "'. Status code: ", r.status_code)
+        
