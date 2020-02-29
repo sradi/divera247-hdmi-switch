@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "data": {
+    "items": {
+      "2198811": {
+        "id": 2198811,
+        "author_id": 197008,
+        "cluster_id": 10214,
+        "alarmcode_id": 123456789,
+        "message_channel_id": 0,
+        "foreign_id": "2019-1023",
+        "title": "BRAUCHE KAFFEE - DRINGEND",
+        "text": "Unklare Rauchentwicklung im Hafen",
+        "report": "2 Einsatztabschnitte gebildet, 3 C-Rohre im Einsatz",
+        "address": "Hauptstraße 247, 12345 Musterstadt",
+        "lat": 0,
+        "lng": 0,
+        "priority": true,
+        "date": 1582785826,
+        "new": false,
+        "editable": true,
+        "answerable": false,
+        "notification_type": 2,
+        "vehicle": [],
+        "group": [],
+        "cluster": [],
+        "user_cluster_relation": [],
+        "hidden": false,
+        "deleted": false,
+        "message_channel": false,
+        "attachment_count": 0,
+        "closed": true,
+        "duration": "1 Minuten",
+        "ts_response": 1582785841,
+        "response_time": 0,
+        "ucr_addressed": [
+          197006,
+          197318
+        ],
+        "ucr_answered": [],
+        "ucr_answeredcount": {},
+        "ucr_read": [],
+        "ucr_self_addressed": false,
+        "count_recipients": 2,
+        "count_read": 0,
+        "private_mode": true,
+        "ts_publish": 0,
+        "ts_create": 1582785826,
+        "ts_update": 1582785841,
+        "ts_close": 1582785841,
+        "notification_filter_vehicle": true,
+        "notification_filter_status": true,
+        "notification_filter_access": true,
+        "notification_filter_status_access": true,
+        "notification_filter_status_ids": [],
+        "send_mail": false,
+        "send_push": false,
+        "send_sms": false,
+        "send_call": false,
+        "send_pager": false,
+        "ucr_self_status_id": 0,
+        "ucr_self_note": "",
+        "long": 0,
+        "type": "BRAUCHE KAFFEE - DRINGEND"
+      }
+    },
+    "sorting": [
+      2198811
+    ]
+  },
+  "ucr": 197008
+}
