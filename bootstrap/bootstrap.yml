@@ -1,0 +1,9 @@
+---
+
+- name: Raspberry-Konfiguration
+  hosts: local
+  become: yes
+  #vars:
+  #  jvm_heapsize: 8g
+  roles:
+    - ../roles/divera-monitor
