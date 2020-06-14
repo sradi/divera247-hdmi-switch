@@ -19,3 +19,5 @@
     packages:
     - git
     - python
+    - cec-utils
+
