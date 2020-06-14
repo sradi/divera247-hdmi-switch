@@ -6,6 +6,7 @@ class HdmiCec:
 
     def __init__(self, deviceNo):
         self.deviceNo = deviceNo
+        os.system("echo 'scan' | cec-client -s -d 1")
 
     def on(self):
         on_command = "echo 'on %d' | cec-client -s -d 1" % self.deviceNo
