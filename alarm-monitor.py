@@ -1,5 +1,6 @@
 #! /usr/bin/python
 
+import time
 import divera
 import hdmi_cec
 
@@ -14,7 +15,9 @@ hdmiDevice0 = hdmi_cec.HdmiCec(0)
 hasOpenAlarms = diveraTesteinheit.has_open_alarms()
 print("Open alarms? ", hasOpenAlarms)
 
-if hasOpenAlarms:
-    hdmiDevice0.on()
-else:
-    hdmiDevice0.standby()
+while True:
+    if hasOpenAlarms:
+        hdmiDevice0.on()
+    else:
+        hdmiDevice0.standby()
+    time.sleep(180)
