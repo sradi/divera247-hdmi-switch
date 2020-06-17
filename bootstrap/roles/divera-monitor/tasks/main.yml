@@ -23,7 +23,5 @@
 
 - name: Install pip packages
   pip:
-    name: "{{ item }}"
+    requirements: {{ role_path }}/files/requirements.txt
     executable: pip3
-  with_items:
-    - daemon
