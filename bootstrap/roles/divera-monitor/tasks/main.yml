@@ -23,5 +23,5 @@
 
 - name: Install pip packages
   pip:
-    requirements: {{ role_path }}/files/requirements.txt
+    requirements: "{{ role_path }}/files/requirements.txt"
     executable: pip3
