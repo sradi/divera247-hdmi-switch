@@ -7,7 +7,7 @@ import sys
 import signal
 from pathlib import Path
 
-lockfile_path = '/Users/sradi/divera.pid'
+lockfile_path = '/home/pi/divera.pid'
 pidfile = Path(lockfile_path)
 
 def dummy():
