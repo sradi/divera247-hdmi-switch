@@ -2,7 +2,7 @@
 
 - name: Create user divera
   user:
-    state: present
+    state: absent
     name: divera
     uid: 1050
     group: users
@@ -31,7 +31,7 @@
 - name: copy conf (FF Bispingen Ortswehr Bispingen)
   template:
     src: divera.ini.j2
-    dest: "/home/divera/divera.ini"
-    owner: "divera"
+    dest: "/home/pi/divera.ini"
+    owner: "pi"
     group: "users"
     mode: "0600"

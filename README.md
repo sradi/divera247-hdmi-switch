@@ -6,7 +6,6 @@ Skript, um bei aktiven Divera 24/7-Alarmen per HDMI-CEC einen Monitor einzuschal
 - bootstrap/bootstrap.sh ausführen
 
 ## Start des Alarm-Monitors
-- sudo su - divera
 - screen <pfadZumRepository>/alarm-monitor.py
 - Ctrl+A Ctrl+D
 - (monitor-Prozess wieder in den Vordergrund holen: screen -r)
