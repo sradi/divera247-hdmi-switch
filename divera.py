@@ -11,11 +11,6 @@ class Divera:
         self._accessKey = accessKey
 
     def __get_json(self):
-        f = open("test/openAlarm_unformatted.json", "r")
-        deserializedJson = json.loads(f.read())
-        f.close()
-        return deserializedJson
-
         alarmsUrl = Divera.API_BASE_URL + "/alarms"
 
         # sending get request and saving the response as response object
@@ -34,7 +29,7 @@ class Divera:
             if not type(allAlarms) is dict:
                 # API liefert {u'data': {u'items': [], u'sorting': []}, u'ucr': 197008, u'success': True}...
                 # wenn keine offenen Alarme existieren. items... leere Liste. Ansonsten ist es ein dict
-                print("No open alarms (items was not of type 'dict'). Returned json: ", r.json())
+                print "No open alarms (items was not of type 'dict'). Returned json: ", deserializedJson
                 return False
 
             # treat allAlarms as dict
