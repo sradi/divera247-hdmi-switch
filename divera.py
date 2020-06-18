@@ -2,6 +2,7 @@
 
 import requests
 import json
+import random
 
 class Divera:
 
@@ -23,18 +24,20 @@ class Divera:
             return False
 
     def has_open_alarms(self):
-            deserializedJson = self.__get_json()
-            allAlarms = deserializedJson["data"]["items"]
+        #return random.choice([True, False])
 
-            if not type(allAlarms) is dict:
-                # API liefert {u'data': {u'items': [], u'sorting': []}, u'ucr': 197008, u'success': True}...
-                # wenn keine offenen Alarme existieren. items... leere Liste. Ansonsten ist es ein dict
-                print "No open alarms (items was not of type 'dict'). Returned json: ", deserializedJson
-                return False
+        deserializedJson = self.__get_json()
+        allAlarms = deserializedJson["data"]["items"]
 
-            # treat allAlarms as dict
-            for a in allAlarms.values():
-                if a["closed"] == False:
-                    return True
+        if not type(allAlarms) is dict:
+            # API liefert {u'data': {u'items': [], u'sorting': []}, u'ucr': 197008, u'success': True}...
+            # wenn keine offenen Alarme existieren. items... leere Liste. Ansonsten ist es ein dict
+            print "No open alarms (items was not of type 'dict'). Returned json: ", deserializedJson
             return False
+
+        # treat allAlarms as dict
+        for a in allAlarms.values():
+            if a["closed"] == False:
+                return True
+        return False
         
