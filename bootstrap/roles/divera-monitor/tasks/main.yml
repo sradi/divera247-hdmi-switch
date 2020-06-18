@@ -20,6 +20,8 @@
     - git
     - python
     - cec-utils
+    - screen
+    - chromium-browser
 
 - name: Install pip packages
   pip:
