@@ -2,4 +2,4 @@
 
 scriptDir=${BASH_SOURCE%/*}/
 
-ansible-playbook -v $scriptDir/bootstrap.yml
+ansible-playbook --ask-vault-pass -v $scriptDir/bootstrap.yml

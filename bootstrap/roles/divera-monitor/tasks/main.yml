@@ -25,3 +25,11 @@
   pip:
     requirements: "{{ role_path }}/files/requirements.txt"
     executable: pip3
+
+- name: copy conf (FF Bispingen Ortswehr Bispingen)
+  template:
+    src: divera.ini.j2
+    dest: "/home/divera/divera.ini"
+    owner: "divera"
+    group: "users"
+    mode: "0600"
