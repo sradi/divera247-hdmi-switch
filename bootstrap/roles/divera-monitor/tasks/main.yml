@@ -38,10 +38,11 @@
 
 - name: Disable screensaver
   lineinfile:
-    path: /etc/xdg/lxsession/LXDE/autostart
+    path: /home/pi/.config/lxsession/LXDE-pi/autostart
     regexp: "{{ item.regex }}"
     line: "{{ item.line }}"
   with_items:
     - { regex: "^@xset s noblank", line: "@xset s noblank" }
     - { regex: "^@xset s off", line: "@xset s off" }
     - { regex: "^@xset -dpms", line: "@xset -dpms" }
+    - { regex: "^.*alarm-monitor.py", line: "@/home/pi/divera247-hdmi-switch/alarm-monitor.py &" }
