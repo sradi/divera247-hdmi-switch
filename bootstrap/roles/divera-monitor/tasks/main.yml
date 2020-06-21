@@ -35,3 +35,13 @@
     owner: "pi"
     group: "users"
     mode: "0600"
+
+- name: Disable screensaver
+  lineinfile:
+    path: /etc/xdg/lxsession/LXDE/autostart
+    regexp: "{{ item.regex }}"
+    line: "{{ item.line }}"
+  with_items:
+    - { regex: "^@xset s noblank", line: "@xset s noblank" }
+    - { regex: "^@xset s off", line: "@xset s off" }
+    - { regex: "^@xset -dpms", line: "@xset -dpms" }
